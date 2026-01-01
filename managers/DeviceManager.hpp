@@ -23,7 +23,7 @@ class DeviceManager {
         if(currentOutputDevice) {
             delete currentOutputDevice;
         }
-        currentOutputDevice = DeviceFactory::createDevice(DeviceType);
+        currentOutputDevice = DeviceFactory::createDevice(deviceType);
         switch(deviceType) {
             case DeviceType::BLUETOOTH:
                  cout << "Bluetooth device connected \n";

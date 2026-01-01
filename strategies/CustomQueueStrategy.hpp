@@ -1,4 +1,4 @@
-#include once
+#pragma once
 #include<bits/stdc++.h>
 #include "../models/Playlist.hpp"
 #include "PlayStrategy.hpp"
@@ -6,7 +6,7 @@ using namespace std;
 
 class CustomQueueStrategy: public PlayStrategy {
 private:
-    Playlist* currentPlaylist;
+    PlayList* currentPlaylist;
     int currentIndex;
     queue<Song*>nextQueue;
     stack<Song*>prevStack;
@@ -30,7 +30,7 @@ public:
         currentPlaylist = nullptr;
         currentIndex = -1;
     }
-    void setPlayList(PlayList* playlist) override {
+    void setPlaylist(PlayList* playlist) override {
         currentPlaylist = playlist;
         currentIndex = -1;
         while(!nextQueue.empty()) {
@@ -71,7 +71,7 @@ public:
         if(!currentPlaylist || currentPlaylist->getSize() == 0) {
             throw runtime_error("No playlist loaded or playlist is empty.");
         }
-        if(!previous.empty()) {
+        if(!prevStack.empty()) {
             Song* s = prevStack.top();
             prevStack.pop();
             auto& list = currentPlaylist->getSongs();

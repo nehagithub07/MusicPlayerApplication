@@ -3,7 +3,7 @@
 using namespace std;
 class HeadphonesAPI {
     public:
-    void playSoundViaBluetooth(const string& data) {
+    void playSoundViaHeadphones(const string& data) {
         cout << "[Headphones] Playing: " << data << "\n";
     }
 };

@@ -3,7 +3,7 @@
 using namespace std;
 class WiredSpeakerAPI {
     public:
-    void playSoundViaBluetooth(const string& data) {
+    void playSoundViaCable(const string& data) {
         cout << "[WiredSpeaker] Playing: " << data << "\n";
     }
 };

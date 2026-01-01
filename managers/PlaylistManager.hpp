@@ -1,11 +1,12 @@
 #pragma once
+#include <bits/stdc++.h>
 #include "../models/Playlist.hpp"
-#include<bits/stdc++.h>
+
 using namespace std;
 
 class PlaylistManager {
     private:
-    map<string, Playlist*> playlists;
+    map<string, PlayList*> playlists;
     static PlaylistManager* instance;
     PlaylistManager() {}
     public:
@@ -26,7 +27,7 @@ class PlaylistManager {
         }
         playlists[playlistName]->addSongToPlaylist(song);
     }
-    Playlist* getPlaylist(const string& name) {
+    PlayList* getPlaylist(const string& name) {
         if(!playlists.count(name)) {
             throw runtime_error("Playlist \"" + name + "\" not found."); 
         }
